@@ -27,3 +27,8 @@ Customer
 Business Logic
 
 ## Repositories
+CustomerRepository
+
+## Value Objects
+
+CustomerRecord

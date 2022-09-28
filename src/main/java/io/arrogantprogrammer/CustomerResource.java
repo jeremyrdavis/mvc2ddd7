@@ -21,11 +21,11 @@ public class CustomerResource {
 
     @POST
     @Transactional
-    public Customer addCustomer(Customer customerToCreate) {
+    public CustomerRecord addCustomer(CustomerRecord customerRecord) {
 
-        Customer customer = Customer.createFromValues(customerToCreate.getEmail(), customerToCreate.getFirstName(), customerToCreate.getLastName());
+        Customer customer = Customer.createFromValues(customerRecord.email(), customerRecord.firstName(), customerRecord.lastName());
         customerRepository.persist(customer);
-        return customer;
+        return new CustomerRecord(customer.id, customer.getEmail(), customer.getFirstName(), customer.getLastName(), customer.getCustomerLoyaltyStatus());
 
     }
 }
