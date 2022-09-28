@@ -18,3 +18,10 @@ CustomerResource
 ## Business Logic
 
 CustomerResource
+
+# Domain Driven Design
+
+## Aggregate
+
+Customer
+Business Logic

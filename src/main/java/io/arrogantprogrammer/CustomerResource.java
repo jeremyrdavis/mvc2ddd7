@@ -18,15 +18,9 @@ public class CustomerResource {
 
     @POST
     @Transactional
-    public Customer addCustomer(Customer customer) {
+    public Customer addCustomer(Customer customerToCreate) {
 
-        if(customer.getFirstName().equals("Jeremy")){
-            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.VIP;
-        }else if(customer.getFirstName().equals("Robert")) {
-            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.NOT_THAT_GUY_AGAIN;
-        }else{
-            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.UNKNOWN;
-        }
+        Customer customer = Customer.createFromValues(customerToCreate.getEmail(), customerToCreate.getFirstName(), customerToCreate.getLastName());
         customer.persist();
         return customer;
 
