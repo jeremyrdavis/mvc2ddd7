@@ -20,6 +20,13 @@ public class CustomerResource {
     @Transactional
     public Customer addCustomer(Customer customer) {
 
+        if(customer.getFirstName().equals("Jeremy")){
+            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.VIP;
+        }else if(customer.getFirstName().equals("Robert")) {
+            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.NOT_THAT_GUY_AGAIN;
+        }else{
+            customer.customerLoyaltyStatus = CustomerLoyaltyStatus.UNKNOWN;
+        }
         customer.persist();
         return customer;
 

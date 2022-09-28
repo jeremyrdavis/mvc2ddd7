@@ -13,6 +13,8 @@ public class Customer extends PanacheEntity {
 
     String lastName;
 
+    CustomerLoyaltyStatus customerLoyaltyStatus;
+
     public Customer() {
     }
 
@@ -22,6 +24,7 @@ public class Customer extends PanacheEntity {
                 "email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", customerLoyaltyStatus=" + customerLoyaltyStatus +
                 '}';
     }
 
@@ -35,5 +38,9 @@ public class Customer extends PanacheEntity {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public CustomerLoyaltyStatus getCustomerLoyaltyStatus() {
+        return customerLoyaltyStatus;
     }
 }
