@@ -32,3 +32,7 @@ CustomerRepository
 ## Value Objects
 
 CustomerRecord
+
+## Services
+
+CustomerService

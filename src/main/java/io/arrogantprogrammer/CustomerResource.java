@@ -11,21 +11,18 @@ import java.util.List;
 public class CustomerResource {
 
     @Inject
-    CustomerRepository customerRepository;
+    CustomerService customerService;
 
     @GET
-    public List<Customer> allCustomers() {
+    public List<CustomerRecord> allCustomers() {
 
-        return customerRepository.listAll();
+        return customerService.allCustomers();
     }
 
     @POST
     @Transactional
     public CustomerRecord addCustomer(CustomerRecord customerRecord) {
 
-        Customer customer = Customer.createFromValues(customerRecord.email(), customerRecord.firstName(), customerRecord.lastName());
-        customerRepository.persist(customer);
-        return new CustomerRecord(customer.id, customer.getEmail(), customer.getFirstName(), customer.getLastName(), customer.getCustomerLoyaltyStatus());
-
+        return customerService.addCustomer(customerRecord);
     }
 }
