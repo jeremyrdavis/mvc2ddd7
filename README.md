@@ -36,3 +36,7 @@ CustomerRecord
 ## Services
 
 CustomerService
+
+## Hexagonal Architecture
+
+KafkaResource
