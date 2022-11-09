@@ -16,7 +16,7 @@ public class KafkaResource {
     @Inject
     CustomerService customerService;
 
-    @Incoming("customers") @Transactional
+    @Incoming("customers-in") @Transactional
     public void addCustomer(CustomerRecord customerRecord) {
 
         CustomerRecord addedCustomer = customerService.addCustomer(customerRecord);

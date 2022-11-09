@@ -40,3 +40,10 @@ CustomerService
 ## Hexagonal Architecture
 
 KafkaResource
+
+```
+kcat -b localhost:55004 -t customers-in -P
+{"firstName":"FIRST_NAME","lastName":"LAST_NAME","email":"EMAIL_ADDRESS"}
+```
+Enter
+Ctrl-D
